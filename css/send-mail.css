@@ -1,0 +1,413 @@
+/* ==========================================================================
+   send-mail.css — страница результата отправки формы (System MSK)
+   Тема: "сигнал доходит до системы" — узел-отправитель, линия, узел-система.
+   ========================================================================== */
+
+:root {
+  --color-bg: #eef1f7;
+  --color-bg-2: #e4e9f3;
+  --color-surface: #ffffff;
+  --color-ink: #16213a;
+  --color-ink-soft: #5b6478;
+  --color-brand: #1f3a63;
+  --color-accent: #e8a33d;
+  --color-success: #2fae72;
+  --color-error: #d64545;
+  --radius-lg: 22px;
+  --shadow-card: 0 20px 60px -20px rgba(22, 33, 58, 0.25), 0 4px 12px rgba(22, 33, 58, 0.08);
+  --font-display: "Manrope", "Segoe UI", sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background: radial-gradient(circle at 15% 15%, var(--color-bg-2), var(--color-bg) 55%);
+}
+
+.result-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.result-card {
+  width: 100%;
+  max-width: 440px;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 40px 36px 36px;
+  text-align: center;
+}
+
+/* ---- Заголовок и текст ---- */
+
+.eyebrow {
+  margin: 4px 0 0;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-brand);
+  opacity: 0.7;
+}
+
+.heading {
+  margin: 10px 0 12px;
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--color-ink);
+}
+
+.text {
+  margin: 0 auto;
+  max-width: 32ch;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--color-ink-soft);
+}
+
+/* ---- Индикатор возврата на сайт ---- */
+
+.redirect {
+  margin-top: 28px;
+}
+
+.progress-track {
+  height: 4px;
+  border-radius: 4px;
+  background: var(--color-bg-2);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 4px;
+  background: var(--color-brand);
+  animation: fill-progress 4s linear forwards;
+}
+
+.state-error .progress-fill {
+  background: var(--color-ink-soft);
+}
+
+.redirect-text {
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: var(--color-ink-soft);
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 18px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--color-brand);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+}
+
+.back-link:hover {
+  color: var(--color-accent);
+}
+
+.back-link:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   Сигнальная графика: узел "вы" -> линия -> узел "система"
+   ========================================================================== */
+
+.signal-graphic {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+/* Узел-отправитель */
+
+.node-start circle {
+  fill: var(--color-surface);
+  stroke: var(--color-brand);
+  stroke-width: 2;
+}
+
+.envelope-body,
+.envelope-flap {
+  fill: none;
+  stroke: var(--color-brand);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+
+/* Соединительная линия */
+
+.connector-line {
+  fill: none;
+  stroke: var(--color-brand);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+}
+
+.state-success .connector-line {
+  animation: draw-full 0.9s cubic-bezier(0.4, 0, 0.2, 1) 0.15s forwards;
+}
+
+.state-error .connector-line {
+  stroke: var(--color-error);
+  stroke-dasharray: 8 6;
+  animation: draw-partial 0.5s ease 0.15s forwards;
+}
+
+@keyframes draw-full {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes draw-partial {
+  to {
+    stroke-dashoffset: 60;
+  }
+}
+
+/* Бегущий импульс */
+
+.pulse-dot {
+  fill: var(--color-accent);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.state-success .pulse-dot {
+  animation: travel-success 0.9s cubic-bezier(0.4, 0, 0.2, 1) 0.15s forwards;
+}
+
+.state-error .pulse-dot {
+  animation: travel-error 0.5s ease 0.15s forwards;
+}
+
+@keyframes travel-success {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  to {
+    transform: translateX(150px);
+    opacity: 0;
+  }
+}
+
+@keyframes travel-error {
+  from {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  to {
+    transform: translateX(90px) scale(0.4);
+    opacity: 0;
+  }
+}
+
+/* Узел-система (конечная точка) */
+
+.node-end-outline {
+  fill: none;
+  stroke: var(--color-brand);
+  stroke-width: 3;
+  opacity: 0.35;
+}
+
+.node-end-fill {
+  opacity: 0;
+}
+
+.state-success .node-end-fill {
+  fill: var(--color-success);
+  animation: fill-in 0.35s ease 0.95s forwards;
+}
+
+.state-error .node-end-fill {
+  fill: var(--color-error);
+  animation: fill-in 0.3s ease 0.55s forwards;
+}
+
+@keyframes fill-in {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Кольца-импульсы при "приёме" сигнала */
+
+.ripple {
+  fill: none;
+  stroke-width: 2;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.state-success .ripple-1 {
+  stroke: var(--color-success);
+  animation: ripple 0.6s ease-out 1s forwards;
+}
+
+.state-success .ripple-2 {
+  stroke: var(--color-success);
+  animation: ripple 0.6s ease-out 1.15s forwards;
+}
+
+.state-error .ripple-1 {
+  stroke: var(--color-error);
+  animation: ripple-small 0.4s ease-out 0.6s forwards;
+}
+
+.state-error .ripple-2 {
+  display: none;
+}
+
+@keyframes ripple {
+  from {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  to {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple-small {
+  from {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(1.15);
+    opacity: 0;
+  }
+}
+
+/* Иконки внутри узла-системы: галочка / крестик */
+
+.icon-check path,
+.icon-cross path {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon-check path {
+  stroke-dasharray: 46;
+  stroke-dashoffset: 46;
+}
+
+.icon-cross path {
+  stroke-dasharray: 37;
+  stroke-dashoffset: 37;
+}
+
+.state-success .icon-check path {
+  animation: draw-icon 0.3s ease 1.05s forwards;
+}
+
+.state-error .icon-cross path {
+  animation: draw-icon 0.25s ease 0.6s forwards;
+}
+
+.state-error .icon-cross path:nth-child(2) {
+  animation-delay: 0.75s;
+}
+
+@keyframes draw-icon {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.state-success .icon-cross,
+.state-error .icon-check {
+  display: none;
+}
+
+/* ---- Уважение к prefers-reduced-motion ---- */
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse-dot,
+  .connector-line,
+  .ripple,
+  .node-end-fill,
+  .icon-check path,
+  .icon-cross path,
+  .progress-fill {
+    animation: none !important;
+  }
+
+  .state-success .connector-line {
+    stroke-dashoffset: 0;
+  }
+  .state-error .connector-line {
+    stroke-dashoffset: 60;
+  }
+  .node-end-fill {
+    opacity: 1;
+  }
+  .state-success .icon-check path,
+  .state-error .icon-cross path {
+    stroke-dashoffset: 0;
+  }
+  .pulse-dot {
+    opacity: 0;
+  }
+  .progress-fill {
+    width: 100%;
+  }
+}
+
+/* ---- Мобильные экраны ---- */
+
+@media (max-width: 420px) {
+  .result-card {
+    padding: 32px 24px 28px;
+  }
+
+  .heading {
+    font-size: 22px;
+  }
+}
