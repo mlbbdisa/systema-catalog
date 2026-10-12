@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru" class="page--category">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Категория - System MSK</title>
+  <link rel="shortcut icon" type="image/x-icon" href="images/Favicon.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="fonts/icomoon/style.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="fonts/icomoon/style.css"></noscript>
+  <style>
+    .cat-hero{padding:calc(var(--header-height) + 28px) 0 28px;background:linear-gradient(135deg,rgba(66,134,244,.08),rgba(66,226,244,.08));border-bottom:1px solid var(--color-border)}
+    .cat-hero h1{margin:0 0 8px;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:#000}
+    .cat-hero p{margin:0;max-width:780px;color:var(--color-muted);line-height:1.6}
+    .cat-body{padding:36px 0 64px}
+    .cat-card{max-width:860px;padding:28px;background:#fff;border:1px solid #eef2f7;border-radius:16px;box-shadow:0 10px 30px rgba(15,23,42,.06)}
+    .cat-card h2{margin:0 0 10px;font-size:1.2rem;font-weight:800;color:#000}
+    .cat-card p{margin:0 0 12px;color:#4a4f5c;line-height:1.6}
+    .cat-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+  </style>
+</head>
+<body class="page page--category">
+  <header class="header" data-header>
+    <div class="l-container header__inner">
+      <a class="header__logo-link" href="index.php"><img class="header__logo-image" src="images/logo.webp" alt="System MSK"></a>
+      <nav class="header__nav">
+        <ul class="header__list" data-clone-nav>
+          <li class="header__item"><a class="header__link" href="catalog.html">Каталог</a></li>
+          <li class="header__item"><a class="header__link" href="index.php#contact">Контакты</a></li>
+        </ul>
+      </nav>
+      <button class="header__burger" type="button" data-menu-toggle aria-label="Открыть меню"><span class="icon-menu"></span></button>
+    </div>
+  </header>
+  <aside class="mobile-menu" data-mobile-menu><div class="mobile-menu__header"><button class="mobile-menu__close" type="button" data-menu-close><span class="icon-close2"></span></button></div><div class="mobile-menu__body" data-mobile-menu-body></div></aside>
+  <div class="mobile-menu__overlay" data-menu-overlay></div>
+
+  <main>
+    <section class="cat-hero">
+      <div class="l-container">
+        <a href="catalog.html" style="font-weight:700">← Назад в каталог</a>
+        <h1 id="cat-title" style="margin-top:12px">Категория</h1>
+        <p id="cat-lead">Подробная страница категории появится здесь. Пока это заглушка - карточка из каталога ведёт сюда по кнопке «Подробнее».</p>
+      </div>
+    </section>
+    <section class="cat-body">
+      <div class="l-container">
+        <div class="cat-card">
+          <h2>Что будет на этой странице</h2>
+          <p>Описание направления, примеры оборудования/ПО, преимущества, кейсы и блок «Оставить заявку». Пока - заглушка, чтобы кнопка «Подробнее» в каталоге имела рабочий редирект.</p>
+          <p id="cat-name" style="font-weight:700;color:#000"></p>
+          <div class="cat-actions">
+            <a class="button button--primary" id="cat-order" href="index.php#contact">Создать заявку</a>
+            <a class="button" href="catalog.html" style="border:2px solid #e6e8ee;border-radius:12px;padding:10px 18px;font-weight:700;color:#12151c;background:#fff">К каталогу</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js" defer></script>
+  <script>
+    (() => {
+      const map = {
+        servers:'Серверное оборудование', components:'Комплектующие', office:'Оргтехника и расходные материалы',
+        network:'Сетевое оборудование', software:'Программное обеспечение', storage:'Системы хранения данных',
+        workstations:'Рабочие станции и ПК', periphery:'Периферия и аксессуары', security:'Информационная безопасность',
+        cctv:'Видеонаблюдение и СКУД', importozam:'Импортозамещение', service:'Аутсорсинг и сервис'
+      };
+      const cat = new URLSearchParams(location.search).get('cat');
+      const name = map[cat] || (cat ? decodeURIComponent(cat) : '');
+      if (name) {
+        document.getElementById('cat-title').textContent = name;
+        document.getElementById('cat-name').textContent = 'Выбрано: ' + name;
+        document.title = name + ' - System MSK';
+        const btn = document.getElementById('cat-order');
+        btn.href = 'index.php?category=' + encodeURIComponent(name) + '#contact';
+        btn.addEventListener('click', () => { try{localStorage.setItem('systemamsk_catalog_category', name)}catch{} });
+      }
+    })();
+  </script>
+</body>
+</html>

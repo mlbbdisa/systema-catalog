@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ru" class="page--catalog">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Каталог - System MSK</title>
+  <link rel="shortcut icon" type="image/x-icon" href="images/Favicon.png">
+  <link rel="icon" type="image/x-icon" href="images/Favicon.png">
+  <link rel="preload" href="/fonts/bebas-neue-v16-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/nunito-v32-cyrillic-ext_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="fonts/icomoon/style.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="fonts/icomoon/style.css"></noscript>
+  <meta name="description" content="Каталог категорий System MSK - серверы, сети, оргтехника, ПО и импортозамещение. Выберите категорию и создайте заявку.">
+</head>
+<body class="page page--catalog">
+
+  <header class="header" data-header role="banner">
+    <div class="l-container header__inner">
+      <h1 class="header__logo">
+        <a class="header__logo-link" href="index.php">
+          <img class="header__logo-image" src="images/logo.webp" alt="System MSK">
+        </a>
+      </h1>
+      <nav class="header__nav" role="navigation" aria-label="Главное меню">
+        <ul class="header__list" data-clone-nav>
+          <li class="header__item"><a class="header__link" href="index.php#about">О компании</a></li>
+          <li class="header__item header__item--has-children">
+            <a class="header__link" href="index.php#products" data-slide="0">Товары</a>
+            <ul class="header__dropdown">
+              <li><a class="header__dropdown-link" href="index.php#products" data-slide="0">Серверное оборудование</a></li>
+              <li><a class="header__dropdown-link" href="index.php#products" data-slide="1">Комплектующие</a></li>
+              <li><a class="header__dropdown-link" href="index.php#products" data-slide="2">Оргтехника</a></li>
+              <li><a class="header__dropdown-link" href="index.php#products" data-slide="3">Сетевое оборудование</a></li>
+              <li><a class="header__dropdown-link" href="index.php#products" data-slide="4">Программное обеспечение</a></li>
+            </ul>
+          </li>
+          <li class="header__item"><a class="header__link header__link--active" href="catalog.html" aria-current="page">Каталог</a></li>
+          <li class="header__item"><a class="header__link" href="images/ПРАЙС.xlsx">Прайс</a></li>
+          <li class="header__item"><a class="header__link" href="index.php#features">Преимущества</a></li>
+          <li class="header__item header__item--has-children">
+            <a class="header__link" href="index.php#partners">Сотрудничество</a>
+            <ul class="header__dropdown">
+              <li><a class="header__dropdown-link" href="index.php#partners">Партнёры</a></li>
+              <li><a class="header__dropdown-link" href="index.php#clients">Клиенты</a></li>
+            </ul>
+          </li>
+          <li class="header__item"><a class="header__link" href="index.php#contact">Контакты</a></li>
+        </ul>
+      </nav>
+      <button class="header__burger" type="button" data-menu-toggle aria-label="Открыть меню">
+        <span class="icon-menu" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <aside class="mobile-menu" data-mobile-menu>
+    <div class="mobile-menu__header">
+      <button class="mobile-menu__close" type="button" data-menu-close aria-label="Закрыть меню">
+        <span class="icon-close2" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="mobile-menu__body" data-mobile-menu-body></div>
+  </aside>
+  <div class="mobile-menu__overlay" data-menu-overlay></div>
+
+  <main>
+    <section class="catalog-hero">
+      <div class="l-container">
+        <span class="catalog-hero__eyebrow">КАТАЛОГ &nbsp;·&nbsp; 12 категорий</span>
+        <h1 class="catalog-hero__title">Каталог направлений System&nbsp;MSK</h1>
+        <p class="catalog-hero__lead">Выберите категорию - нажмите «Создать заявку», и она автоматически подставится в форму на главной странице. Кнопка «Подробнее» ведёт на будущую страницу категории.</p>
+      </div>
+    </section>
+
+    <section class="catalog">
+      <div class="l-container">
+        <div class="catalog__grid">
+
+          <!-- 1 -->
+          <article class="catalog-card reveal" data-category="Серверное оборудование">
+            <div class="catalog-card__top">
+              <span class="catalog-card__icon"><span class="icon-server" aria-hidden="true"></span></span>
+              <span class="catalog-card__badge">№1 · Серверы</span>
+            </div>
+            <h2 class="catalog-card__title">Серверное оборудование</h2>
+            <p class="catalog-card__text">Стоечные и блейд-серверы, СХД и вычислительные комплексы для ЦОД и офисов. YADRO, xFusion, Dell и др.</p>
+            <ul class="catalog-card__meta">
+              <li>Подбор под нагрузку</li>
+              <li>Гарантия и ЗИП</li>
+              <li>Внедрение</li>
+            </ul>
+            <div class="catalog-card__actions">
+              <button class="catalog-card__btn catalog-card__btn--primary" type="button" data-catalog-order="Серверное оборудование"><span class="icon-cart-plus" aria-hidden="true"></span> Создать заявку</button>
+              <a class="catalog-card__btn catalog-card__btn--ghost" href="category-servers.html">Подробнее →</a>
+            </div>
+          </article>
+
+          <!-- 2 -->
+          <article class="catalog-card reveal" data-category="Комплектующие">
+            <div class="catalog-card__top">
+              <span class="catalog-card__icon"><span class="icon-cogs" aria-hidden="true"></span></span>
+              <span class="catalog-card__badge">№2 · Комплектующие</span>
+            </div>
+            <h2 class="catalog-card__title">Комплектующие</h2>
+            <p class="catalog-card__text">Процессоры, память, диски, рейд-контроллеры и компоненты для апгрейда и ЗИП.</p>
+            <ul class="catalog-card__meta">
+              <li>HPE / Lenovo</li>
+              <li>Supermicro</li>
+              <li>Срочная поставка</li>
+            </ul>
+            <div class="catalog-card__actions">
+              <button class="catalog-card__btn catalog-card__btn--primary" type="button" data-catalog-order="Комплектующие"><span class="icon-cart-plus" aria-hidden="true"></span> Создать заявку</button>
+              <a class="catalog-card__btn catalog-card__btn--ghost" href="category-components.html">Подробнее →</a>
+            </div>
+          </article>
+
+          <!-- 3 -->
+          <article class="catalog-card reveal" data-category="Оргтехника и расходные материалы">
+            <div class="catalog-card__top">
+              <span class="catalog-card__icon"><span class="icon-print" aria-hidden="true"></span></span>
+              <span class="catalog-card__badge">№3 · Офис</span>
+            </div>
+            <h2 class="catalog-card__title">Оргтехника и расходные материалы</h2>
+            <p class="catalog-card__text">Принтеры, МФУ, сканеры и расходники. NVprint, HP, Kyocera - оригинал и совместимые.</p>
+            <ul class="catalog-card__meta">
+              <li>МФУ / Принтеры</li>
+              <li>Картриджи</li>
+              <li>Аутсорсинг печати</li>
+            </ul>
+            <div class="catalog-card__actions">
+              <button class="catalog-card__btn catalog-card__btn--primary" type="button" data-catalog-order="Оргтехника и расходные материалы"><span class="icon-cart-plus" aria-hidden="true"></span> Создать заявку</button>
+              <a class="catalog-card__btn catalog-card__btn--ghost" href="category-office.html">Подробнее →</a>
+            </div>
+          </article>
+
+          <!-- 4 -->
+          <article class="catalog-card reveal" data-category="Сетевое оборудование">
+            <div class="catalog-card__top">
+              <span class="catalog-card__icon"><span class="icon-wifi" aria-hidden="true"></span></span>
+              <span class="catalog-card__badge">№4 · Сети</span>
+            </div>
+            <h2 class="catalog-card__title">Сетевое оборудование</h2>
+            <p class="catalog-card__text">Коммутаторы, маршрутизаторы, точки доступа и оптика для корпоративных сетей.</p>
+            <ul class="catalog-card__meta">
+              <li>Cisco / ELTEX</li>
+              <li>Huawei / QTECH</li>
+              <li>Монтаж и настройка</li>
+            </ul>
+            <div class="catalog-card__actions">
+              <button class="catalog-card__btn catalog-card__btn--primary" type="button" data-catalog-order="Сетевое оборудование"><span class="icon-cart-plus" aria-hidden="true"></span> Создать заявку</button>
+              <a class="catalog-card__btn catalog-card__btn--ghost" href="category-network.html">Подробнее →</a>
+            </div>
+          </article>
+
+          <!-- 5 -->
+          <article class="catalog-card reveal" data-category="Программное обеспечение">
+            <div class="catalog-card__top">
+              <span class="catalog-card__icon"><span class="icon-windows" aria-hidden="true"></span></span>
+              <span class="catalog-card__badge">№5 · ПО</span>
+            </div>
+            <h2 class="catalog-card__title">Программное обеспечение</h2>
+            <p class="catalog-card__text">Отечественное и зарубежное ПО: ОС, виртуализация, офисные и специализированные решения.</p>
+            <ul class="catalog-card__meta">
+              <li>РЕД ОС / Astra</li>
+              <li>Лицензирование</li>
+              <li>Миграция</li>
+            </ul>
+            <div class="catalog-card__actions">
+              <button class="catalog-card__btn catalog-card__btn--primary" type="button" data-catalog-order="Программное обеспечение"><span class="icon-cart-plus" aria-hidden="true"></span> Создать заявку</button>
+              <a class="catalog-card__btn catalog-card__btn--ghost" href="category-software.html">Подробнее →</a>
+            </div>
+          </article>
+
+          <!-- 6 -->
+          <article class="catalog-card reveal" data-category="Системы хранения данных">
+            <div class="catalog-card__top">
+              <span class="catalog-card__icon"><span class="icon-database" aria-hidden="true"></span></span>
+              <span class="catalog-card__badge">№6 · СХД</span>
+            </div>
+            <h2 class="catalog-card__title">Системы хранения данных</h2>
+            <p class="catalog-card__text">All-Flash, гибридные СХД, NAS и СРК для резервного копирования и архивов.</p>
+            <ul class="catalog-card__meta">
+              <li>All-Flash</li>
+              <li>Резервирование</li>
+              <li>RuBackup и др.</li>
+            </ul>
+            <div class="catalog-card__actions">
+              <button class="catalog-card__btn catalog-card__btn--primary" type="button" data-catalog-order="Системы хранения данных"><span class="icon-cart-plus" aria-hidden="true"></span> Создать заявку</button>
+              <a class="catalog-card__btn catalog-card__btn--ghost" href="category-storage.html">Подробнее →</a>
+            </div>
+          </article>
+
+          <!-- 7 -->
+          <article class="catalog-card reveal" data-category="Рабочие станции и ПК">
+            <div class="catalog-card__top">
+              <span class="catalog-card__icon"><span class="icon-desktop" aria-hidden="true"></span></span>
+              <span class="catalog-card__badge">№7 · ПК</span>
+            </div>
+            <h2 class="catalog-card__title">Рабочие станции и ПК</h2>
+            <p class="catalog-card__text">Готовые конфигурации и кастомные сборки для инженеров, дизайнеров и офиса.</p>
+            <ul class="catalog-card__meta">
+              <li>ПК / Моноблоки</li>
+              <li>Ноутбуки</li>
+              <li>Delta / RDW / Rikor</li>
+            </ul>
+            <div class="catalog-card__actions">
+              <button class="catalog-card__btn catalog-card__btn--primary" type="button" data-catalog-order="Рабочие станции и ПК"><span class="icon-cart-plus" aria-hidden="true"></span> Создать заявку</button>
+              <a class="catalog-card__btn catalog-card__btn--ghost" href="category-workstations.html">Подробнее →</a>
+            </div>
+          </article>
+
+          <!-- 8 -->
+          <article class="catalog-card reveal" data-category="Периферия и аксессуары">
+            <div class="catalog-card__top">
+              <span class="catalog-card__icon"><span class="icon-keyboard-o" aria-hidden="true"></span></span>
+              <span class="catalog-card__badge">№8 · Периферия</span>
+            </div>
+            <h2 class="catalog-card__title">Периферия и аксессуары</h2>
+            <p class="catalog-card__text">Мониторы, ИБП, клавиатуры, мыши, кабели и всё для оснащения рабочих мест.</p>
+            <ul class="catalog-card__meta">
+              <li>Мониторы</li>
+              <li>ИБП / Батареи</li>
+              <li>Аксессуары</li>
+            </ul>
+            <div class="catalog-card__actions">
+              <button class="catalog-card__btn catalog-card__btn--primary" type="button" data-catalog-order="Периферия и аксессуары"><span class="icon-cart-plus" aria-hidden="true"></span> Создать заявку</button>
+              <a class="catalog-card__btn catalog-card__btn--ghost" href="category-periphery.html">Подробнее →</a>
+            </div>
+          </article>
+
+          <!-- 9 -->
+          <article class="catalog-card reveal" data-category="Информационная безопасность">
+            <div class="catalog-card__top">
+              <span class="catalog-card__icon"><span class="icon-shield" aria-hidden="true"></span></span>
+              <span class="catalog-card__badge">№9 · ИБ</span>
+            </div>
+            <h2 class="catalog-card__title">Информационная безопасность</h2>
+            <p class="catalog-card__text">Средства защиты, антивирусы, DLP, SIEM. Kaspersky, InfoWatch, Positive Technologies.</p>
+            <ul class="catalog-card__meta">
+              <li>Антивирусы</li>
+              <li>DLP / SIEM</li>
+              <li>Аудит ИБ</li>
+            </ul>
+            <div class="catalog-card__actions">
+              <button class="catalog-card__btn catalog-card__btn--primary" type="button" data-catalog-order="Информационная безопасность"><span class="icon-cart-plus" aria-hidden="true"></span> Создать заявку</button>
+              <a class="catalog-card__btn catalog-card__btn--ghost" href="category-security.html">Подробнее →</a>
+            </div>
+          </article>
+
+          <!-- 10 -->
+          <article class="catalog-card reveal" data-category="Видеонаблюдение и СКУД">
+            <div class="catalog-card__top">
+              <span class="catalog-card__icon"><span class="icon-video-camera" aria-hidden="true"></span></span>
+              <span class="catalog-card__badge">№10 · Видео</span>
+            </div>
+            <h2 class="catalog-card__title">Видеонаблюдение и СКУД</h2>
+            <p class="catalog-card__text">Камеры, регистраторы, контроль доступа и охранные системы под ключ.</p>
+            <ul class="catalog-card__meta">
+              <li>IP-камеры</li>
+              <li>СКУД</li>
+              <li>Монтаж</li>
+            </ul>
+            <div class="catalog-card__actions">
+              <button class="catalog-card__btn catalog-card__btn--primary" type="button" data-catalog-order="Видеонаблюдение и СКУД"><span class="icon-cart-plus" aria-hidden="true"></span> Создать заявку</button>
+              <a class="catalog-card__btn catalog-card__btn--ghost" href="category-cctv.html">Подробнее →</a>
+            </div>
+          </article>
+
+          <!-- 11 -->
+          <article class="catalog-card reveal" data-category="Импортозамещение">
+            <div class="catalog-card__top">
+              <span class="catalog-card__icon"><span class="icon-flag" aria-hidden="true"></span></span>
+              <span class="catalog-card__badge">№11 · Отечественное</span>
+            </div>
+            <h2 class="catalog-card__title">Импортозамещение</h2>
+            <p class="catalog-card__text">Подбор реестрового оборудования и ПО из реестра Минцифры, миграция и сопровождение.</p>
+            <ul class="catalog-card__meta">
+              <li>Реестр Минцифры</li>
+              <li>Аналоги</li>
+              <li>Консультация</li>
+            </ul>
+            <div class="catalog-card__actions">
+              <button class="catalog-card__btn catalog-card__btn--primary" type="button" data-catalog-order="Импортозамещение"><span class="icon-cart-plus" aria-hidden="true"></span> Создать заявку</button>
+              <a class="catalog-card__btn catalog-card__btn--ghost" href="category-importozam.html">Подробнее →</a>
+            </div>
+          </article>
+
+          <!-- 12 -->
+          <article class="catalog-card reveal" data-category="Аутсорсинг и сервис">
+            <div class="catalog-card__top">
+              <span class="catalog-card__icon"><span class="icon-wrench" aria-hidden="true"></span></span>
+              <span class="catalog-card__badge">№12 · Сервис</span>
+            </div>
+            <h2 class="catalog-card__title">Аутсорсинг и сервис</h2>
+            <p class="catalog-card__text">ИТ-аутсорсинг, техподдержка, пуско-наладка, гарантия и постгарантийное обслуживание.</p>
+            <ul class="catalog-card__meta">
+              <li>Аутсорсинг</li>
+              <li>Поддержка 24/7</li>
+              <li>SLA</li>
+            </ul>
+            <div class="catalog-card__actions">
+              <button class="catalog-card__btn catalog-card__btn--primary" type="button" data-catalog-order="Аутсорсинг и сервис"><span class="icon-cart-plus" aria-hidden="true"></span> Создать заявку</button>
+              <a class="catalog-card__btn catalog-card__btn--ghost" href="category-service.html">Подробнее →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js" defer></script>
+  <script>
+  (() => {
+    const LS_KEY = 'systemamsk_catalog_category';
+    const onReady = (fn) => document.readyState !== 'loading' ? fn() : document.addEventListener('DOMContentLoaded', fn);
+    onReady(() => {
+      document.querySelectorAll('[data-catalog-order]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const cat = btn.getAttribute('data-catalog-order') || '';
+          if (!cat) return;
+          try { localStorage.setItem(LS_KEY, cat); } catch {}
+          const url = 'index.php?category=' + encodeURIComponent(cat) + '#contact';
+          window.location.href = url;
+        });
+      });
+    });
+  })();
+  </script>
+</body>
+</html>
